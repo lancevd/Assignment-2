@@ -1,0 +1,137 @@
+:root {
+  --dark: #16213E;
+  --primary: #0F3460;
+  --secondary: #533483;
+  --accent: #E94560;
+}
+
+body {
+  background: var(--dark);
+  color: #eee;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 100vh;
+}
+
+.home-btn {
+  padding: 10px;
+  border: solid #eee 3px;
+  background: transparent;
+  color: #eee;
+}
+
+
+/* USers Page */
+
+
+.users h2 {
+  text-align: center;
+}
+
+.users {
+  overflow: hidden;
+}
+
+.cards-container{
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Card component */
+
+.user-card {
+  width: 100%;
+  /* height: 25rem; */
+  border: solid #eee 1px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.user-card img {
+  width: 100%;
+}
+
+.card-btn{
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex; 
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--primary);
+}
+
+.pagination button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.pagination .active {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+/* Error Page */
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  grid-template: 3rem;
+
+}
+
+
+/* =========MEDIA Query============ */
+
+@media screen and (min-width:1024px) {
+  .error h1 {
+    font-size: 20em;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width:990px) {
+  .cards-container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media screen and (max-width:576px) {
+  .cards-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
