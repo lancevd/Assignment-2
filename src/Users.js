@@ -13,24 +13,17 @@ var requestOptions = {
 const Users = () => {
 	const [users, setUsers] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage, setPostsPerPage] = useState(4);
-    const [loading, setLoading] = useState(false)
-    const [use, setUse] = useState([]);
+	const [postsPerPage] = useState(4);
+    // const [loading, setLoading] = useState(false)
 
     
 	useEffect(() => {
-        setLoading(true)
-            fetch("https://randomuser.me/api/?results=25")
-            // fetch("https://randomuser.me/api/?page=5&results=50&seed=abc")
+            fetch("https://randomuser.me/api/?results=25") 
             .then((response) => response.json())
             .then((result) => {
-                const {body} = result;
-                setUse(body)
                 setUsers(result.results);
             })
             .catch((error) => console.log("error", error));
-            setLoading(false)
-
         }, []);
     
 
